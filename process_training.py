@@ -18,7 +18,7 @@ net = CharRNN(chars, n_hidden=512, n_layers=4)
 print(len(text))
 print(net)
 
-n_seqs, n_steps = 256, 200
+n_seqs, n_steps = 256, 100
 model_name = 'rnn_1_epoch.net'
 
 try:
