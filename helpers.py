@@ -8,6 +8,16 @@ class Helpers():
     prepare data
     """
 
+    def save_model(self, net, model_name = 'rnn_1_epoch.net'):
+
+        checkpoint = {'n_hidden' : net.n_hidden,
+                    'n_layers' : net.n_layers,
+                    'state_dict':net.state_dict(),
+                    'tokens': net.chars}
+
+        with open('backup/' + model_name, 'wb') as file:
+            torch.save(checkpoint, file)
+
     def device(self):
         if torch.cuda.is_available():
             print('cuda')

@@ -26,3 +26,9 @@ def sample(net, size, prime='The', top_k=None, cuda=False):
         chars.append(char)
         
     return ''.join(chars)
+
+def predict(net):
+
+    net.eval()
+    
+    return 'predict'

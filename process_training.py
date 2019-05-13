@@ -5,7 +5,7 @@ from train import *
 
 tools = Helpers()
 
-_, chars = tools.chars()
+text, chars = tools.chars()
 encoded = tools.encoded()
 
 device = tools.device()
@@ -13,20 +13,19 @@ device = tools.device()
 if 'net' in locals():
     del net
 
-net = CharRNN(chars, n_hidden=512, n_layers=2)
+net = CharRNN(chars, n_hidden=512, n_layers=4)
 
+print(len(text))
 print(net)
 
-n_seqs, n_steps = 128, 100
-
-train(net, encoded, epochs=100, n_seqs=n_seqs, n_steps=n_steps, lr=0.001, cuda=device, print_every=10)
-
+n_seqs, n_steps = 256, 200
 model_name = 'rnn_1_epoch.net'
 
-checkpoint = {'n_hidden' : net.n_hidden,
-              'n_layers' : net.n_layers,
-              'state_dict':net.state_dict(),
-              'tokens': net.chars}
+try:
+    train(net, encoded, epochs=50, n_seqs=n_seqs, n_steps=n_steps, lr=0.001, cuda=device, print_every=10)
+   
+    tools.save_model(net, model_name)
 
-with open(model_name, 'wb') as file:
-    torch.save(checkpoint, file)
+except KeyboardInterrupt:
+
+    tools.save_model(net, model_name)
