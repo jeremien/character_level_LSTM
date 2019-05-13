@@ -8,7 +8,7 @@ from sample import *
 text = Helpers()
 
 def train(net, data, epochs=10, n_seqs=10, n_steps=50, lr=0.001, clip=5, val_frac=0.1, cuda=False, print_every=10):
-    
+
     ''' Training a network 
     
         Arguments
@@ -43,7 +43,7 @@ def train(net, data, epochs=10, n_seqs=10, n_steps=50, lr=0.001, clip=5, val_fra
     counter = 0
     n_chars = len(net.chars)
     
-    for e in tqdm(range(epochs)):
+    for e in range(epochs):
         
         h = net.init_hidden(n_seqs)
         
