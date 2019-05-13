@@ -19,7 +19,7 @@ print(net)
 
 n_seqs, n_steps = 128, 100
 
-train(net, encoded, epochs=5, n_seqs=n_seqs, n_steps=n_steps, lr=0.001, cuda=device, print_every=10)
+train(net, encoded, epochs=100, n_seqs=n_seqs, n_steps=n_steps, lr=0.001, cuda=device, print_every=10)
 
 model_name = 'rnn_1_epoch.net'
 

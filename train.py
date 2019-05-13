@@ -8,6 +8,7 @@ from sample import *
 text = Helpers()
 
 def train(net, data, epochs=10, n_seqs=10, n_steps=50, lr=0.001, clip=5, val_frac=0.1, cuda=False, print_every=10):
+    
     ''' Training a network 
     
         Arguments
