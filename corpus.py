@@ -27,7 +27,7 @@ class FormatData():
                             line = re.sub('.$', ' ', line)
                             # line = re.sub('[\n\t\r]', ' ', line)
                             line = re.sub('[’]', "'", line)
-                            line = self.unicode_to_ascii(line)
+                            # line = self.unicode_to_ascii(line)
                             line = re.sub('[.]{2,}', ' ', line)
                             line = re.sub('\s+', ' ', line)
                             # line = line.lower()
