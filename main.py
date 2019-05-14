@@ -10,4 +10,6 @@ loaded = CharRNN(checkpoint['tokens'],
 
 loaded.load_state_dict(checkpoint['state_dict'])
 
+print(checkpoint)
+
 print(sample(loaded, 1000, prime="The", top_k=5, cuda=True))
