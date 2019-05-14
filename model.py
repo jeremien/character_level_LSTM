@@ -68,7 +68,6 @@ class CharRNN(nn.Module):
     
     def predict(self, char, h=None, cuda=False, top_k=None):
         ''' Given a character, predict the next character.
-        
             Returns the predicted character and the hidden state.
         '''
         if cuda:
