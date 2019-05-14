@@ -8,7 +8,7 @@ class Helpers():
     prepare data
     """
 
-    def save_model(self, net, model_name = 'rnn_1_epoch.net'):
+    def save_model(self, net, model_name = 'rnn_50_epoch_fr.net'):
 
         checkpoint = {'n_hidden' : net.n_hidden,
                     'n_layers' : net.n_layers,

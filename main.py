@@ -1,7 +1,7 @@
 from model import *
 from sample import *
 
-with open('rnn_1_epoch.net', 'rb') as file:
+with open('backup/rnn_50_epoch_fr.net', 'rb') as file:
     checkpoint = torch.load(file)
     
 loaded = CharRNN(checkpoint['tokens'], 
@@ -10,4 +10,4 @@ loaded = CharRNN(checkpoint['tokens'],
 
 loaded.load_state_dict(checkpoint['state_dict'])
 
-sample(loaded, 100, prime="I", top_k=5, cuda=True)
+print(sample(loaded, 1000, prime="Le", top_k=5, cuda=True))

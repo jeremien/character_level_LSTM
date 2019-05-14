@@ -13,12 +13,12 @@ device = tools.device()
 if 'net' in locals():
     del net
 
-net = CharRNN(chars, n_hidden=512, n_layers=4)
+net = CharRNN(chars, n_hidden=512, n_layers=2)
 
 print(len(text))
 print(net)
 
-n_seqs, n_steps = 256, 100
+n_seqs, n_steps = 128, 100
 model_name = 'rnn_1_epoch.net'
 
 try:
