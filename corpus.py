@@ -1,6 +1,7 @@
 import unicodedata
-import os, sys, glob, re, pickle, string
-from progress.bar import Bar
+import sys, glob, re, string, random
+import spacy
+import tqdm
 
 
 class FormatData():
@@ -10,45 +11,67 @@ class FormatData():
     args : 
         path (str) : path of the corpus
     """
-    
+
+    nlp = spacy.load('fr_core_news_sm')
+
     def __init__(self, path):
         self.path = path
 
-    def open_files(self):
+    @staticmethod
+    def parse_line(line):
+        line = line.lower()
+        line = re.sub('(^—\s)','', line)
+        line = re.sub('(^–\s)', '', line)
+        line = re.sub('^\d*', '', line)
+        line = re.sub('[…]','.', line)
+        line = re.sub('[*] ', '', line)
+        line = re.sub('[«»]', '', line)
+        line = re.sub('[’]', "'", line)
+        line = re.sub('[()]','', line)
+        line = re.sub('^-', '', line)
+        line = re.sub('^—', '', line)
+        line = re.sub('\s+', ' ', line)
+        line = re.sub('^\.', '', line)
+        line = re.sub('^\s', '', line)
+
+        # line = self.unicode_to_ascii(line)
+        return line
+    
+    def extract_sentence(self, line):
+        doc = self.nlp(line)
+        sentences = []
+        for i, sentence in enumerate(doc.sents):
+            # print("process sentences {}".format(i))
+            phrase = str(sentence)
+            sentences.append(phrase)
+        return sentences
+
+    def shuffle_sentences(self):
         files = glob.glob(self.path + '*.txt')
-        # print(files)
+        random.shuffle(files)
+        all_lines = []
+        if files:
+            for file in files:
+                with open(file) as infile:
+                    print("process file {}".format(file))
+                    for line in infile:
+                        if not line.strip(): continue
+                        new_lines = self.extract_sentence(line)
+                        # line = self.parse_line(line)
+                        all_lines.append(new_lines)
+        else:
+            print("no files")
+        
+        flat_list = [y for x in all_lines for y in x]
+        random.shuffle(flat_list)
+        # flat_list = list(filter(None, flat_list))
         with open('./data/input.txt', 'w') as outfile:
-            if files:
-                for file in files:
-                    # print(file)
-                    with open(file) as infile:
-                        for line in infile:
-                            if not line.strip(): continue
-                            line = re.sub('^\d*', '', line)
-                            line = re.sub('[«»]', '', line)
-                            line = re.sub('[—] ','', line)
-                            line = re.sub('[–]', '', line)
-                            line = re.sub(' [—] ','', line)
-                            line = re.sub('  [–] ', '', line)
-                            line = re.sub('[…]','.', line)
-                            # line = re.sub(' \. ', '.', line)
-                            # line = re.sub('.$', ' ', line)
-                            # line = re.sub('[\n\t\r]', ' ', line)
-                            line = re.sub('[’]', "'", line)
-                            # line = self.unicode_to_ascii(line)
-                            line = re.sub('[.]{2,}', ' ', line)
-                            line = re.sub('\s+', ' ', line)
-                            # line = line.lower()
-                            line = re.sub('[ ]{2,}', ' ', line)
-                            # line = re.sub('^\s', '', line)
-                            line = re.sub('[*] ', '', line)
-                            line = re.sub(' [,] ', ', ', line)
-                            outfile.write(line)
-                        print("save file {}".format(file))    
-
-            else:
-                print("no files")
-
+            for line in flat_list:
+                line = self.parse_line(line)
+                if not line.strip(): continue
+                line = line.capitalize()
+                outfile.write(line + '\n')
+            print('file save')
 
     def unicode_to_ascii(self, text):
         try:
@@ -64,7 +87,8 @@ class FormatData():
 
 def main(*args):
     data = FormatData(args[0])
-    data.open_files()
+    # data.open_files()
+    data.shuffle_sentences()
     print("files processed")
 
 if __name__ == "__main__":

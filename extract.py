@@ -11,7 +11,7 @@ def text_extractor(path):
         info = pdf.getDocumentInfo()
         pages = pdf.getNumPages()
     
-        print(pages)
+        print(pages) 
         # page = pdf.getPage(pages)
         # print(page)
 

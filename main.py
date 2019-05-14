@@ -4,7 +4,7 @@ from colorama import Fore, Back
 import time
 from time import sleep
 
-with open('backup/rnn_50_epoch_fr.net', 'rb') as file:
+with open('backup/rnn_100_epoch_fr.net', 'rb') as file:
     checkpoint = torch.load(file)
     
 loaded = CharRNN(checkpoint['tokens'], 

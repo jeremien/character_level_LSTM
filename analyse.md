@@ -15,3 +15,7 @@ types
 -----
 rapports
 actes
+
+mathématique
+science
+technique

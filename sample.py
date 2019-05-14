@@ -31,7 +31,7 @@ def generate(net):
         phrase = str(sentence)
         sentences.append(phrase)
 
-    
+    sentences.pop(0)
     sentences.pop(len(sentences)-1)
     return '\n'.join(sentences)
 
