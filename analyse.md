@@ -15,6 +15,7 @@ types
 -----
 rapports
 actes
+articles
 
 mathématique
 science
