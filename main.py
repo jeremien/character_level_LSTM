@@ -1,7 +1,10 @@
 from model import *
 from sample import *
+from colorama import Fore, Back
+import time
+from time import sleep
 
-with open('backup/rnn_38_epoch_en.net', 'rb') as file:
+with open('backup/rnn_50_epoch_fr.net', 'rb') as file:
     checkpoint = torch.load(file)
     
 loaded = CharRNN(checkpoint['tokens'], 
@@ -10,6 +13,18 @@ loaded = CharRNN(checkpoint['tokens'],
 
 loaded.load_state_dict(checkpoint['state_dict'])
 
-# print(checkpoint['tokens'])
+def main():
+    try:
+        while True:
+            # print('\n',Back.BLUE)
+            print('\n',Fore.RED, "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
+            print('\n',Fore.GREEN, time.asctime(time.localtime(time.time())), '\n')
+            print(Fore.WHITE, generate(loaded))
+            print('\n\n\n')
+            sleep(20)
 
-print(sample(loaded, 1000, prime="The", top_k=5, cuda=True))
+    except KeyboardInterrupt:
+        print("stop generated text", "\n")
+
+if __name__ == "__main__":
+    main()
