@@ -24,13 +24,25 @@ class FormatData():
                     with open(file) as infile:
                         for line in infile:
                             if not line.strip(): continue
-                            line = re.sub('.$', ' ', line)
+                            line = re.sub('^\d*', '', line)
+                            line = re.sub('[«»]', '', line)
+                            line = re.sub('[—] ','', line)
+                            line = re.sub('[–]', '', line)
+                            line = re.sub(' [—] ','', line)
+                            line = re.sub('  [–] ', '', line)
+                            line = re.sub('[…]','.', line)
+                            # line = re.sub(' \. ', '.', line)
+                            # line = re.sub('.$', ' ', line)
                             # line = re.sub('[\n\t\r]', ' ', line)
                             line = re.sub('[’]', "'", line)
                             # line = self.unicode_to_ascii(line)
                             line = re.sub('[.]{2,}', ' ', line)
                             line = re.sub('\s+', ' ', line)
                             # line = line.lower()
+                            line = re.sub('[ ]{2,}', ' ', line)
+                            # line = re.sub('^\s', '', line)
+                            line = re.sub('[*] ', '', line)
+                            line = re.sub(' [,] ', ', ', line)
                             outfile.write(line)
                         print("save file {}".format(file))    
 
