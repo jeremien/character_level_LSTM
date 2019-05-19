@@ -20,16 +20,16 @@ class FormatData():
     @staticmethod
     def parse_line(line):
         line = line.lower()
-        line = re.sub('(^—\s)','', line)
-        line = re.sub('(^–\s)', '', line)
+        # line = re.sub('(^—\s)','', line)
+        # line = re.sub('(^–\s)', '', line)
         line = re.sub('^\d*', '', line)
         line = re.sub('[…]','.', line)
         line = re.sub('[*] ', '', line)
         line = re.sub('[«»]', '', line)
         line = re.sub('[’]', "'", line)
         line = re.sub('[()]','', line)
-        line = re.sub('^-', '', line)
-        line = re.sub('^—', '', line)
+        # line = re.sub('^-', '', line)
+        # line = re.sub('^—', '', line)
         line = re.sub('\s+', ' ', line)
         line = re.sub('^\.', '', line)
         line = re.sub('^\s', '', line)
@@ -63,14 +63,15 @@ class FormatData():
             print("no files")
         
         flat_list = [y for x in all_lines for y in x]
-        random.shuffle(flat_list)
+        # random.shuffle(flat_list)
         # flat_list = list(filter(None, flat_list))
         with open('./data/input.txt', 'w') as outfile:
             for line in flat_list:
                 line = self.parse_line(line)
                 if not line.strip(): continue
-                line = line.capitalize()
-                outfile.write(line + '\n')
+                # line = line.capitalize()
+                outfile.write(line + ' ')
+                # outfile.write(line + '\n')
             print('file save')
 
     def unicode_to_ascii(self, text):

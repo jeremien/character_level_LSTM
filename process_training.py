@@ -19,7 +19,7 @@ print(len(text))
 print(net)
 
 n_seqs, n_steps = 256, 120
-model_name = 'rnn_100_epoch_fr_256_120_6.net'
+model_name = 'rnn_100_epoch_fr_256_120_4.net'
 
 try:
     train(net, encoded, epochs=100, n_seqs=n_seqs, n_steps=n_steps, lr=0.001, cuda=device, print_every=100)

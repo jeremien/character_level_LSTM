@@ -20,3 +20,6 @@ articles
 mathématique
 science
 technique
+
+https://1findr.1science.com
+http://data.persee.fr/explorer/

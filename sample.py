@@ -33,7 +33,7 @@ def generate(net):
 
     sentences.pop(0)
     sentences.pop(len(sentences)-1)
-    return '\n'.join(sentences)
+    return ''.join(sentences)
 
 def sample(net, size, prime='The', top_k=None, cuda=False):
     

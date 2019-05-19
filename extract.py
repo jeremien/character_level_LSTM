@@ -6,23 +6,22 @@ def open_files(path):
     return files
 
 def text_extractor(path):
-    with open(path, "rb") as file:
-        pdf = PdfFileReader(file)
-        info = pdf.getDocumentInfo()
-        pages = pdf.getNumPages()
-    
-        print(pages) 
-        # page = pdf.getPage(pages)
-        # print(page)
-
-        # text = page.extractText()
-        # print(text)
+        result = []
+        with open(path, "rb") as file:
+                pdf = PdfFileReader(file)
+                info = pdf.getDocumentInfo()
+                pages = pdf.getNumPages()
+                for p in range(pages):
+                        page = pdf.getPage(p)
+                        text = page.extractText()
+                        result.append(text)
+        print(result)
 
 def main():
-    files = open_files('./sources/')
-    # text_extractor('sources/definitions.pdf')
+    files = open_files('./sources/neuroscience/')
 
-    print(files)
+    for file in files:
+        text_extractor(file)
 
 if __name__ == "__main__":
     main()
