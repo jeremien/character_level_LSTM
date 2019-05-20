@@ -8,14 +8,15 @@ def generate(net):
     net.cuda()
     net.eval()
 
-    prime = ['L','J','I']
-    size = randint(500, 1000)
+    prime = ['e','a','i', 's', 'n', 'r', 't', 'o', 'l', 'u', 'd']
+    size = randint(1000, 2000)
 
     result = [prime[randint(0,len(prime)-1)]]
+    # print(result)
 
     h = net.init_hidden(1)
 
-    char, h = net.predict('L', h, cuda=True, top_k=5)
+    char, h = net.predict(''.join(result), h, cuda=True, top_k=5)
     result.append(char)
 
     for i in range(size):
@@ -28,12 +29,14 @@ def generate(net):
     sentences = []
 
     for _, sentence in enumerate(doc.sents):
-        phrase = str(sentence)
+        phrase = str(sentence).capitalize()
+        # print(phrase)
         sentences.append(phrase)
 
     sentences.pop(0)
     sentences.pop(len(sentences)-1)
-    return ''.join(sentences)
+    return sentences
+    # return '\n'.join(sentences)
 
 def sample(net, size, prime='The', top_k=None, cuda=False):
     

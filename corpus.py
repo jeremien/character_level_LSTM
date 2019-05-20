@@ -86,11 +86,15 @@ class FormatData():
         except:
             print("error when parsing from unicode to ascii")
 
-def main(*args):
-    data = FormatData(args[0])
-    # data.open_files()
-    data.shuffle_sentences()
-    print("files processed")
+def main():
+    if len(sys.argv) > 1:
+        path = sys.argv[1]
+
+        data = FormatData(path)
+        data.shuffle_sentences()
+        print("files processed")
+    else:
+        print("Usage: python corpus.py data/corpus/")
 
 if __name__ == "__main__":
-    main(str(sys.argv[1]))
+    main()

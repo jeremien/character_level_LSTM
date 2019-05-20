@@ -1,30 +1,39 @@
 from model import *
 from sample import *
 from colorama import Fore, Back
-import time
+import time, sys
 from time import sleep
 
-with open('backup/rnn_100_epoch_fr_256_120_4.net', 'rb') as file:
-    checkpoint = torch.load(file)
-    
-loaded = CharRNN(checkpoint['tokens'], 
-                 n_hidden=checkpoint['n_hidden'],
-                 n_layers=checkpoint['n_layers'])
-
-loaded.load_state_dict(checkpoint['state_dict'])
-
 def main():
-    try:
-        while True:
-            # print('\n',Back.BLUE)
-            print('\n',Fore.RED, "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
-            print('\n',Fore.GREEN, time.asctime(time.localtime(time.time())), '\n')
-            print(Fore.WHITE, generate(loaded))
-            print('\n\n\n')
-            sleep(20)
+    if len(sys.argv) > 1:
 
-    except KeyboardInterrupt:
-        print("stop generated text", "\n")
+        path = sys.argv[1]
+
+        with open(path, 'rb') as file:
+            checkpoint = torch.load(file)
+            
+            loaded = CharRNN(checkpoint['tokens'], 
+                            n_hidden=checkpoint['n_hidden'],
+                            n_layers=checkpoint['n_layers'])
+
+            loaded.load_state_dict(checkpoint['state_dict'])
+
+        try:
+            with open('backup/text/' + time.asctime(time.localtime(time.time())) + '.txt', 'a') as file:
+                while True:
+                    text = '\n'.join(generate(loaded))
+                    print('\n',Fore.RED, "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
+                    print('\n',Fore.GREEN, time.asctime(time.localtime(time.time())), '\n')
+                    print(Fore.WHITE, text)
+                    print('\n\n\n')
+                    file.write(text)
+                    sleep(20)
+
+        except KeyboardInterrupt:
+            print("stop generated text", "\n")
+            file.close()
+    else:
+        print("Usage : python main.py backup/rnn_100_epoch_fr_256_120_4.net")
 
 if __name__ == "__main__":
     main()
