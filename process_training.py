@@ -16,7 +16,7 @@ def main():
         if 'net' in locals():
             del net
 
-        net = CharRNN(chars, n_hidden=512, n_layers=4, drop_prob=0.7)
+        net = CharRNN(chars, n_hidden=512, n_layers=3, drop_prob=0.7)
 
         print(len(text))
         print(net)
