@@ -8,11 +8,11 @@ def main():
     if len(sys.argv) > 6 :
 
         model_name = sys.argv[1]
-        epochs = sys.argv[2]
-        n_steps = sys.argv[3]
-        n_seqs = sys.argv[4]
-        layers = sys.argv[5]
-        dropout = sys.argv[6]
+        epochs = int(sys.argv[2])
+        n_steps = int(sys.argv[3])
+        n_seqs = int(sys.argv[4])
+        layers = int(sys.argv[5])
+        dropout = float(sys.argv[6])
 
         tools = Helpers()
 
