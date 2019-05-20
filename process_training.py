@@ -21,7 +21,7 @@ def main():
         print(len(text))
         print(net)
 
-        n_seqs, n_steps = 256, 200
+        n_seqs, n_steps = 256, 180
         model_name = sys.argv[1]
 
         try:
