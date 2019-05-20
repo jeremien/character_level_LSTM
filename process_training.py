@@ -13,7 +13,7 @@ device = tools.device()
 if 'net' in locals():
     del net
 
-net = CharRNN(chars, n_hidden=512, n_layers=3, drop_prob=0.8)
+net = CharRNN(chars, n_hidden=512, n_layers=2, drop_prob=0.8)
 
 print(len(text))
 print(net)
