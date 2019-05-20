@@ -18,8 +18,8 @@ net = CharRNN(chars, n_hidden=512, n_layers=2, drop_prob=0.8)
 print(len(text))
 print(net)
 
-n_seqs, n_steps = 256, 300
-model_name = 'rnn_100_epoch_fr_256_300_3_0.8.net'
+n_seqs, n_steps = 256, 200
+model_name = 'rnn_100_epoch_fr_256_250_2_0.8.net'
 
 try:
     train(net, encoded, epochs=50, n_seqs=n_seqs, n_steps=n_steps, lr=0.001, cuda=device, print_every=100)
