@@ -5,22 +5,22 @@ import sys, time, json
 
 app = Flask(__name__)
 
+def load_model(path):
+    with open(path, 'rb') as file:
+                    checkpoint = torch.load(file)                   
+                    loaded = CharRNN(checkpoint['tokens'], 
+                                    n_hidden=checkpoint['n_hidden'],
+                                    n_layers=checkpoint['n_layers'])
+                    loaded.load_state_dict(checkpoint['state_dict'])
+                    return loaded
+
 @app.route('/', methods=['GET'])
 def main():
     if len(sys.argv) > 1:
         path = sys.argv[1]
-
-        with open(path, 'rb') as file:
-                checkpoint = torch.load(file)
-                
-                loaded = CharRNN(checkpoint['tokens'], 
-                                n_hidden=checkpoint['n_hidden'],
-                                n_layers=checkpoint['n_layers'])
-
-                loaded.load_state_dict(checkpoint['state_dict'])
-        
+        model = load_model(path)
         date = time.asctime(time.localtime(time.time()))
-        text = generate(loaded)
+        text = generate(model)
         
         data = {
             'date' : date,
