@@ -1,7 +1,9 @@
 from model import *
 from sample import *
+from figures import *
+
 from colorama import Fore, Back
-import time, sys
+import time, sys, glob, random
 from time import sleep
 
 def main():
@@ -21,11 +23,13 @@ def main():
         try:
             with open('backup/text/' + time.asctime(time.localtime(time.time())) + '.txt', 'a') as file:
                 while True:
+                    image = figure()
                     text = '\n'.join(generate(loaded))
-                    print('\n',Fore.RED, "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
+                    print('\n',Fore.RED, "+------------------------------------------------+")
+                    print('\n', image)
                     print('\n',Fore.GREEN, time.asctime(time.localtime(time.time())), '\n')
                     print(Fore.WHITE, text)
-                    print('\n\n\n')
+                    print('\n')
                     file.write(text)
                     sleep(20)
 
