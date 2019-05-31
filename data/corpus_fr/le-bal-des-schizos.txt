@@ -1,196 +1,6 @@
-Philip K. Dick
-
-
-LE BAL DES SCHIZOS
-
-Collection : Science-fiction
-
-Maison d’édition : J’ai lu
-
-Traduit de l’anglais (États-Unis)
-
-par Anne et Georges Dutter
-
-© Philip K. Dick, 1972
-
-Pour la traduction française
-
-© Champ Libre, 1975
-
-Dépôt légal : juin 2014
-
-ISBN numérique : 9782290161548
-
-ISBN du pdf web : 9782290161555
-
-Le livre a été imprimé sous les références :
-
-ISBN : 9782290033593
-
-
-Ce document numérique a été réalisé par Nord Compo.
-
-
-
-
-Présentation de l’éditeur :
-
-
-
-
-
-Sans autre ambition que celle de vendre les orgues électroniques qu’il bricole dans son magasin, Louis Rosen voit son monde changer le jour où son associé et la fille de ce dernier, Pris, schizophrène tout juste rendue à la vie civile par le Bureau Fédéral de Santé Mentale après une longue thérapie, mettent au point un automate plus vrai que nature. Prenant pour modèle des grandes figures de l’histoire américaine, leur premier simulacre imite à s’y méprendre Edwin Stanton, héros de la guerre de Sécession. Enhardis par leur succès, ils s’attaquent ensuite à Abraham Lincoln lui-même…
-
-
-
-
-
-Flamidon © J’ai lu
-
-
-
-
-
-Biographie de l’auteur :
-
-
-
-
-
-Aucun auteur de science-fiction n’a laissé derrière lui d’œuvre plus personnelle que Philip K. Dick. En une quarantaine de romans et près de deux cents nouvelles, adaptés plus de quatre-vingts fois au cinéma (Total Recall, Blade Runner, Minority Report…), il a littéralement transcendé les frontières du genre. Le bal des schizos peut être lu comme un prélude à Blade Runner avec lequel il partage les principaux thèmes et même certains personnages.
-
-
-
-
-
-Titre original :
-
-WE CAN BUILD YOU
-
-
-
-© Philip K. Dick, 1972
-
-
-
-Pour la traduction française
-
-© Champ Libre, 1975
-
-
-
-
-
-Du même auteur
-
-aux Éditions J’ai lu
-
-
-Loterie solaire, J’ai lu 547
-
-Dr Bloodmoney, J’ai lu 563
-
-À rebrousse-temps, J’ai lu 613
-
-L’œil dans le ciel, J’ai lu 1209
-
-Blade runner, J’ai lu 1768
-
-Le temps désarticulé, J’ai lu 4133
-
-Sur le territoire de Milton Lumky, J’ai lu 9809
-
-Bricoler dans un mouchoir de poche, J’ai lu 9873
-
-L’homme dont toutes les dents étaient exactement semblables, J’ai lu 10087
-
-Humpty Dumpty à Oakland, J’ai lu 10213
-
-Pacific Park, J’ai lu 10298
-
-Les chaînes de l’avenir, J’ai lu 10481
-
-Le profanateur, J’ai lu 10548
-
-Les pantins cosmiques, J’ai lu 10567
-
-Le maître du Haut Château, J’ai lu 10636
-
-Les marteaux de Vulcain, J’ai lu 10685
-
-Docteur Futur, J’ai lu 10759
-
-Le bal des schizos, J’ai lu 10767
-
-Les joueurs de Titan, J’ai lu 10818
-
-Glissement de temps sur Mars, J’ai lu 10835
-
-
-
-Dans la collection Nouveaux Millénaires
-
-Romans 1953-1959
-
-Romans 1960-1963
-
-Romans 1963-1964
-
-Romans 1965-1969
-
-Le maître du Haut Château
-
-Blade Runner (Les androïdes rêvent-ils de moutons électriques ?)
-
-Le dieu venu du Centaure
-
-Coulez mes larmes, dit le policier
-
-
-
-En semi-poche
-
-Ô nation sans pudeur
-
-Confessions d’un barjo
-
-
-
-
-Pour Kathy Demuelle,
-
-ma meilleure amie,
-
-Mea voluptas, mea deliciae,
-
-mea vita, mea amoenitas…
-
-
-
-À Robert et Ginny Heinlein
-
-dont la gentillesse à notre égard signifiait
-
-plus que les mots ordinaires ne sauraient le dire.
-
-
-
-
-
-1
-
-
-
-
-
 C’est au début des années 1970 que notre technique de vente parvint à la perfection. Nous commencions par passer une annonce dans un journal local :
 
-
-
-
-
 Piano droit et orgue électronique. Soldés après saisie. État neuf. SACRIFIÉS. Comptant, ou bon crédit sur place, pour éviter transport retour Oregon. Contacter M. Rock, Service crédits, Société des pianos Frauenzimmer, Ontario, Oregon.
-
 
 
 Pendant des années, nous avions inséré ce placard dans les petites annonces des journaux de toutes les villes de tous les États de l’Ouest, et jusqu’au Colorado. Ce quadrillage s’était amélioré grâce à une méthode scientifique et systématique : nous utilisions des cartes et ratissions tous les secteurs sans épargner une seule ville. Nous avions quatre camions à turbine, toujours sur la route, un homme par véhicule.
@@ -198,9 +8,6 @@ Pendant des années, nous avions inséré ce placard dans les petites annonces d
 Donc, nous faisions paraître l’annonce, disons dans L’Indépendant de San Rafael, et très vite les lettres commençaient à arriver à notre bureau d’Ontario, Oregon. C’est mon associé, Maury Rock, qui s’occupait du courrier. Il triait les missives, établissait des listes et, quand il avait assez de demandes pour une région donnée, aux environs de San Rafael par exemple, il envoyait un message radio de nuit au camion. Supposons que Fred se trouve dans le comté de Marin – dès qu’il recevait le message, il sortait sa propre carte pour établir un planning de ses visites. Puis il dénichait une cabine téléphonique et appelait le numéro du premier client éventuel.
 
 Entre-temps, Maury avait envoyé une lettre par avion à chacune des personnes qui avaient répondu à l’annonce :
-
-
-
 
 
 Cher monsieur Machin,
@@ -222,9 +29,7 @@ Notre bureau était situé dans un immeuble en brique du centre d’Ontario, en 
 Donc j’avais garé ma poussiéreuse Chevrolet décapotable à turbine Magic Fire et je me dirigeais vers l’immeuble portant notre enseigne :
 
 
-
 MASA & ASSOCIÉS
-
 
 
 MASA signifie « Multiplex Américaine de Systèmes Acoustiques », un nom bidon à consonance électronique inventé pour l’usine d’orgues électroniques dans laquelle, pour raisons de famille, je suis très impliqué. Maury a choisi « Société des Pianos Frauenzimmer », car c’est un nom qui collait mieux avec notre système commercial. Frauenzimmer est le vrai nom d’émigré de Maury, Rock étant encore une autre invention. Moi, c’est Louis Rosen. Ça veut dire roses, en allemand. Un jour, j’ai demandé à Maury le sens de Frauenzimmer et il m’a répondu : féminité. Puis j’ai voulu savoir où il avait pêché le nom de Rock.

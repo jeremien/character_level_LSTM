@@ -2,9 +2,18 @@ from model import *
 from sample import *
 from figures import *
 
-from colorama import Fore, Back
-import time, sys, glob, random
+from colorama import Fore
+import time, sys
 from time import sleep
+
+def delay_print(string):
+    sys.stdout.write(string)
+    sys.stdout.flush()
+    time.sleep(.1)
+
+def loop(text):
+    for t in text:
+        delay_print(t)
 
 def main():
     if len(sys.argv) > 1:
@@ -25,10 +34,11 @@ def main():
                 while True:
                     image = figure()
                     text = '\n'.join(generate(loaded))
-                    print('\n',Fore.RED, "+------------------------------------------------+")
+                    print('\n',Fore.RED, "+--------------------------------------------------------------------------------------+")
                     print('\n', image)
                     print('\n',Fore.GREEN, time.asctime(time.localtime(time.time())), '\n')
-                    print(Fore.WHITE, text)
+                    print(Fore.WHITE, "")
+                    loop(text)
                     print('\n')
                     file.write(text)
                     sleep(20)
