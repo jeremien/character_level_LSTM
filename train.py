@@ -103,7 +103,8 @@ def train(net, data, epochs=10, n_seqs=10, n_steps=50, lr=0.001, clip=5, val_fra
                 print("Epoch: {}/{}...".format(e+1, epochs),
                       "Step: {}...".format(counter),
                       "Loss: {:.4f}...".format(loss.item()),
-                      "Val Loss: {:.4f}".format(np.mean(val_losses)))
+                      "Val Loss: {:.4f}".format(np.mean(val_losses)),
+                      "Diff: {:.4f".format(np.mean(val_losses) - loss.item()))
 
                 # print(predict(net))
                 
