@@ -36,13 +36,18 @@ def main():
             with open('backup/text/' + time.asctime(time.localtime(time.time())) + '.txt', 'a') as file:
                 while True:
                     image = figure()
-                    text = '\n'.join(generate(loaded))
-                    print('\n',Fore.RED, "+--------------------------------------------------------------------------------------+")
+                    date = time.asctime(time.localtime(time.time()))
+                    try:
+                        text = '\n'.join(generate(loaded))
+                    except IndexError:
+                        continue
+                    print('\n',Fore.RED, "")
                     print('\n', image)
-                    print('\n',Fore.GREEN, time.asctime(time.localtime(time.time())), '\n')
+                    print('\n',Fore.GREEN, date)
                     print(Fore.WHITE, "")
                     loop(text)
                     print('\n')
+                    file.write(image)
                     file.write(text)
                     sleep(20)
 
