@@ -3,13 +3,16 @@ from sample import *
 from figures import *
 
 from colorama import Fore
-import time, sys
+import time, sys, random
 from time import sleep
 
 def delay_print(string):
     sys.stdout.write(string)
     sys.stdout.flush()
-    time.sleep(.1)
+    random_num = random.uniform(0.7, 0.001)
+    # random_num = random.random()
+    # print(random_num)
+    time.sleep(random_num)
 
 def loop(text):
     for t in text:

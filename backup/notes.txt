@@ -6,3 +6,6 @@ Epoch: 100/100... Step: 42200... Loss: 1.0115... Val Loss: 1.3180 --> model save
 Epoch: 100/100... Step: 24100... Loss: 1.0411... Val Loss: 1.3278 --> model saved as rnn_100_256_140_4_0.6.net
 Epoch: 100/100... Step: 21100... Loss: 1.0239... Val Loss: 1.3392 --> model saved as rnn_100_512_150_4_0.6.net
 Epoch: 100/100... Step: 34900... Loss: 1.0675... Val Loss: 1.1462 --> model saved as rnn_100_256_120_4_0.6.net
+
+Epoch: 100/200... Step: 29900... Loss: 1.0517... Val Loss: 1.1939
+Epoch: 200/200... Step: 59800... Loss: 1.0202... Val Loss: 1.1825 --> model saved as rnn_200_256_140_4_0.6.net

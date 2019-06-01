@@ -9,7 +9,7 @@ def generate(net):
     net.eval()
 
     prime = ['e','a','i', 's', 'n', 'r', 't', 'o', 'l', 'u', 'd']
-    size = randint(1000, 2000)
+    size = randint(100, 10000)
 
     result = [prime[randint(0,len(prime)-1)]]
     # print(result)
