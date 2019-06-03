@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 from model import *
 from sample import *
 from figures import *
@@ -19,6 +21,7 @@ def loop(text):
         delay_print(t)
 
 def main():
+    print("start")
     if len(sys.argv) > 1:
 
         path = sys.argv[1]
@@ -45,7 +48,7 @@ def main():
                     print('\n', image)
                     print('\n',Fore.GREEN, date)
                     print(Fore.WHITE, "")
-                    loop(text)
+                    print(loop(text))
                     print('\n')
                     file.write(image)
                     file.write(text)

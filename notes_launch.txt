@@ -1,0 +1,1 @@
+https://github.com/OpenLabTools/OpenLabTools/wiki/Launching-bash-scripts-at-startup
