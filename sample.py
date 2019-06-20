@@ -8,7 +8,8 @@ def generate(net):
     net.cuda()
     net.eval()
 
-    prime = ['e','a','i', 's', 'n', 'r', 't', 'o', 'l', 'u', 'd']
+    # prime = ['e','a','i', 's', 'n', 'r', 't', 'o', 'l', 'u', 'd']
+    prime = ['l']
     size = randint(1000, 2000)
 
     result = [prime[randint(0,len(prime)-1)]]
@@ -33,7 +34,7 @@ def generate(net):
         # print(phrase)
         sentences.append(phrase)
 
-    sentences.pop(0)
+    # sentences.pop(0)
     sentences.pop(len(sentences)-1)
     return sentences
     # return '\n'.join(sentences)
