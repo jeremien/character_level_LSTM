@@ -1,12 +1,3 @@
-#!/usr/bin/env python3.5.6
-
-# import sys
-
-# print(sys.version)
-# for p in sys.path:
-#     print(p)
-    
-
 from model import *
 from sample import *
 from colorama import Fore
@@ -15,10 +6,7 @@ import time, sys, random, glob
 def delay_print(string):
     sys.stdout.write(string)
     sys.stdout.flush()
-    # print(string)
     random_num = random.uniform(0.7, 0.001)
-    # random_num = random.random()
-    # print(random_num)
     time.sleep(random_num)
 
 def loop(text):
@@ -33,9 +21,7 @@ def figure():
     return file
 
 def main():
-
     path = "/home/jeremie/Code/character_level_LSTM/backup/rnn_200_256_140_4_0.6_dick.net"
-
     with open(path, 'rb') as file:
         checkpoint = torch.load(file)
         
@@ -44,16 +30,27 @@ def main():
                         n_layers=checkpoint['n_layers'])
 
         loaded.load_state_dict(checkpoint['state_dict'])
-    image = figure()
-    date = time.asctime(time.localtime(time.time()))
-    text = '\n'.join(generate(loaded))
 
-    print('\n',Fore.RED, "")
-    print('\n', image)
-    print('\n',Fore.GREEN, date)
-    print(Fore.WHITE, "")
-    print(text)
+        image = figure()
+        date = time.asctime(time.localtime(time.time()))
+        text = '\n'.join(generate(loaded))
 
+        print('\n',Fore.RED, "")
+        print('\n', image)
+        print('\n',Fore.GREEN, date)
+        print(Fore.WHITE, "")
+        loop(text)
+        print('\n')
 
-if __name__ == "__main__":
+for i in range(2678460):
+    print(Fore.GREEN,"itération <{}>".format(i))
     main()
+    time.sleep(60)
+# if __name__ == "__main__":
+
+    # while True:
+    #     main()
+    #     time.sleep(20)
+    # except KeyboardInterrupt:
+    #     print("stop generated text", "\n")
+
