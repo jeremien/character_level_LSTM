@@ -12,13 +12,13 @@ class FormatData():
         path (str) : path of the corpus
     """
 
-    nlp = spacy.load('fr_core_news_sm')
+    nlp = spacy.load('en_core_web_sm')
 
     def __init__(self, path):
         self.path = path
 
-    @staticmethod
-    def parse_line(line):
+    # @staticmethod
+    def parse_line(self,line):
         line = line.lower()
         # line = re.sub('(^—\s)','', line)
         # line = re.sub('(^–\s)', '', line)
@@ -34,7 +34,7 @@ class FormatData():
         line = re.sub('^\.', '', line)
         line = re.sub('^\s', '', line)
 
-        # line = self.unicode_to_ascii(line)
+        line = self.unicode_to_ascii(line)
         return line
     
     def extract_sentence(self, line):
