@@ -17,11 +17,12 @@ def figure():
     files = glob.glob('/home/jeremie/Code/nothing_wild_in_particular/figures/' + '*.txt')
     num = random.randint(0, len(files)-1)
     file_path = files[num]
+#     print(file_path)
     file = open(file_path, 'r').read()
     return file
 
 def main():
-    path = "/home/jeremie/Code/nothing_wild_in_particular/backup/rnn_200_256_140_4_0.6.net"
+    path = "/home/jeremie/Code/nothing_wild_in_particular/backup/rnn_100_en_256_130_4_0.6.net"
     with open(path, 'rb') as file:
         checkpoint = torch.load(file)
         
@@ -43,7 +44,7 @@ def main():
         print('\n')
 
 for i in range(2678460):
-    print(Fore.GREEN,"itération <{}>".format(i))
+    print(Fore.GREEN,"Number {}".format(i+1))
     main()
     time.sleep(60)
 # if __name__ == "__main__":
