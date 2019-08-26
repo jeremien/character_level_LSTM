@@ -14,7 +14,7 @@ def loop(text):
         delay_print(t)
 
 def figure():
-    files = glob.glob('/home/jeremie/Code/nothing_wild_in_particular/figures/' + '*.txt')
+    files = glob.glob('/home/administrateur/character_level_LSTM/figures/' + '*.txt')
     num = random.randint(0, len(files)-1)
     file_path = files[num]
 #     print(file_path)
@@ -22,7 +22,7 @@ def figure():
     return file
 
 def main():
-    path = "/home/jeremie/Code/nothing_wild_in_particular/backup/rnn_100_en_256_130_4_0.6.net"
+    path = "/home/administrateur/character_level_LSTM/backup/rnn_100_en_256_130_4_0.6.net"
     with open(path, 'rb') as file:
         checkpoint = torch.load(file)
         
