@@ -37,14 +37,14 @@ def main():
         text = '\n'.join(generate(loaded))
 
         print('\n',Fore.RED, "")
-        print('\n', image)
+        print(image)
         print('\n',Fore.GREEN, date)
         print(Fore.WHITE, "")
         loop(text)
         print('\n')
 
 for i in range(2678460):
-    print(Fore.GREEN,"Number {}".format(i+1))
+    print(Fore.GREEN,"Text n°{}".format(i+1))
     main()
     time.sleep(60)
 # if __name__ == "__main__":

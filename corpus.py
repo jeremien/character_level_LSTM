@@ -33,6 +33,7 @@ class FormatData():
         line = re.sub('\s+', ' ', line)
         line = re.sub('^\.', '', line)
         line = re.sub('^\s', '', line)
+        line = re.sub('"', '', line)
 
         line = self.unicode_to_ascii(line)
         return line
