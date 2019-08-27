@@ -1,7 +1,9 @@
 from model import *
 from sample import *
 from colorama import Fore
-import time, sys, random, glob
+import time, sys, random, glob, os
+
+dirpath = os.getcwd()
 
 def delay_print(string):
     sys.stdout.write(string)
@@ -14,15 +16,15 @@ def loop(text):
         delay_print(t)
 
 def figure():
-    files = glob.glob('/home/jeremie/Code/nothing_wild_in_particular/figures/' + '*.txt')
+    files = glob.glob(dirpath + '/figures/' + '*.txt')
     num = random.randint(0, len(files)-1)
     file_path = files[num]
-#     print(file_path)
+    print(file_path, num, len(files), dirpath)
     file = open(file_path, 'r').read()
     return file
 
 def main():
-    path = "/home/jeremie/Code/nothing_wild_in_particular/backup/rnn_100_en_256_130_4_0.6.net"
+    path =  dirpath + '/backup/rnn_100_en_256_130_4_0.6.net'
     with open(path, 'rb') as file:
         checkpoint = torch.load(file)
         
